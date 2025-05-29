@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFuture 2025 - Inovação e Tecnologia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: rgb(241, 241, 241);
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #4a5568;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        /* Informações do Evento */
+        .event-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        /* Speakers */
+        .speakers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .speaker-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .speaker-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            object-fit: cover;
+        }
+
+        .speaker-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .speaker-bio {
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Formulario */
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        /* Validação visual do Form */
+        input:required:valid {
+            border-color: #38a169;
+        }
+
+        input:required:invalid {
+            border-color: #e53e3e;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 5px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        input[type="radio"] {
+            width: 18px;
+            height: 18px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-top: 2px;
+        }
+
+        .checkbox-label {
+            flex: 1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #5a67d8;
+        }
+
+        .submit-btn:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+        }
+
+        /* Mensagem de sucesso */
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #c3e6cb;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 20px;
+            }
+
+            .event-info,
+            .speakers-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>TechFuture 2025</h1>
+            <p class="subtitle">Inovação e Tecnologia para o Futuro</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Informações do Evento -->
+        <section id="evento">
+            <h2>Sobre o Evento</h2>
+            <p>
+                O TechFuture 2025 é o maior evento de tecnologia e inovação do ano, reunindo especialistas, 
+                desenvolvedores e entusiastas para compartilhar conhecimento sobre as tendências que moldarão 
+                o futuro da tecnologia.
+            </p>
+            <div class="event-info">
+                <div class="info-card">
+                    <div class="info-label">Data</div>
+                    <div>15 de Julho de 2025</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Horário</div>
+                    <div>09:00 às 18:00</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Local</div>
+                    <div>Centro de Convenções - Salvador, BA</div>
+                </div>
+                <div class="info-card">
+                    <div class="info-label">Tema</div>
+                    <div>Inteligência Artificial e Sustentabilidade</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers -->
+        <section id="palestrantes">
+            <h2>Palestrantes</h2>
+            <div class="speakers-grid">
+                <div class="speaker-card">
+                    <img src="AnaMaria.jpg" alt="Ana Maria Santos" class="speaker-photo">
+                    <div class="speaker-name">Ana Maria Santos</div>
+                    <p class="speaker-bio">
+                        Doutora em Inteligência Artificial pela USP, com mais de 15 anos de experiência 
+                        em machine learning. Atualmente lidera a equipe de IA em uma das maiores 
+                        empresas de tecnologia do Brasil.
+                    </p>
+                </div>
+                <div class="speaker-card">
+                    <img src="RobertoCosta.jpg" alt="Roberto Costa" class="speaker-photo">
+                    <div class="speaker-name">Roberto Costa</div>
+                    <p class="speaker-bio">
+                        Especialista em sustentabilidade tecnológica e green computing. Fundador de 
+                        três startups focadas em soluções ambientais e autor de diversos artigos 
+                        sobre tecnologia sustentável.
+                    </p>
+                </div>
+                <div class="speaker-card">
+                    <img src="MarianaFerreira.jpg" alt="Mariana Ferreira" class="speaker-photo">
+                    <div class="speaker-name">Mariana Ferreira</div>
+                    <p class="speaker-bio">
+                        Engenheira de software sênior especializada em desenvolvimento de aplicações 
+                        escaláveis. Palestrante internacional e mentora de desenvolvedores iniciantes 
+                        em programação.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Form -->
+        <section id="inscricao">
+            <h2>Inscrição</h2>
+            <div class="form-container">
+                <form method="POST" action="#" autocomplete="on">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input 
+                            type="text" 
+                            id="nome" 
+                            name="nome" 
+                            required 
+                            minlength="2"
+                            maxlength="100"
+                            placeholder="Digite seu nome completo"
+                            autocomplete="name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            required 
+                            placeholder="seu@email.com"
+                            autocomplete="email"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de Ingresso *</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="presencial" name="ingresso" value="presencial" required>
+                                <label for="presencial">Presencial</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="online" name="ingresso" value="online" required>
+                                <label for="online">Online</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="checkbox-group">
+                            <input 
+                                type="checkbox" 
+                                id="termos" 
+                                name="termos" 
+                                value="aceito"
+                                required
+                            >
+                            <label for="termos" class="checkbox-label">
+                                Aceito os termos e condições do evento e autorizo o uso de minha imagem 
+                                para fins de divulgação *
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Confirmar Inscrição
+                    </button>
+                </form>
+
+                <!-- Mensagem de sucesso (seria mostrada após o envio) -->
+                <!-- <div class="success-message">
+                    ✓ Inscrição realizada com sucesso! Você receberá um e-mail de confirmação em breve.
+                </div> -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>
